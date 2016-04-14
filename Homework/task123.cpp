@@ -1,3 +1,8 @@
+/*
+source: https://www.ibm.com/developerworks/aix/library/au-spunix_sharedmemory/
+compile: gcc -o shm shm.c -lrt
+exec: ./shm
+*/
 
 #include <stdio.h>
 #include <string.h>
@@ -244,8 +249,9 @@ void taskTwo()
 			;
 		//cout<<"Step 2:"<<endl;
                            int *temp = new int[digit];
-                           //for (int i = 0; i < digit; ++i)
-                           //             temp[i] = answer[i];
+                           for (int i = 0; i < digit; ++i)
+                                        temp[i] = answer[i];
+                                    
                            if (*((int*)ptr) == -1)
 			exit(0);
 		else if ( ID[0] == getpid())
@@ -268,7 +274,7 @@ void taskTwo()
 			for (size_t i = 0; i < digit; i++)              
                                        	if (temp[i] == s[i + 4])
                                                      {
-                                                     	cout<<"A : "<<i<<": "<<temp[i]<<endl;
+                                                     	//cout<<"A : "<<i<<": "<<temp[i]<<endl;
                                                      	temp[i] = -1;
                                                      	s[i+4] = -2;
                                                      }
@@ -278,7 +284,7 @@ void taskTwo()
                                               		  if (static_cast<int>(temp[i]) == s[j + 4] &&  s[j + 4]>0 && static_cast<int>(temp[i]) >0 )
                                               		  {        
                                                    			s[2]++;
-                                                   			cout<<"temp"<<i<<":"<<temp[i]<<"=="<<"!"<<s[j+4]<<endl;;
+                                                   			//cout<<"temp"<<i<<":"<<temp[i]<<"=="<<"!"<<s[j+4]<<endl;;
                                                    			temp[i] = -1;
                                                    			break;
                                              		   }
