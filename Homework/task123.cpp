@@ -1,8 +1,3 @@
-/*
-source: https://www.ibm.com/developerworks/aix/library/au-spunix_sharedmemory/
-compile: gcc -o shm shm.c -lrt
-exec: ./shm
-*/
 
 #include <stdio.h>
 #include <string.h>
